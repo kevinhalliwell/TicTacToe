@@ -4,18 +4,67 @@
 
 /* Box Model Hack */
 *{
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body{
+	background: black;
 }
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-img{
-  display: block;
-  margin: 0 auto;
-  width: 25%;
+.outerContainer{
+	  display: grid;
+	  place-items: center;
+	  min-height: 100vh;
+}
+.innerContainer{
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: repeat(3, 200px);
+	  grid-template-rows: repeat(3, 200px);
+}
+.cell1, .cell2, .cell3{
+	background-color: #F56600;
+	color: #fff;
+	border-radius: 2px;
+	grid-row: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.cell4, .cell5, .cell6{
+	background-color: #F56600;
+	color: #fff;
+	border-radius: 2px;
+	grid-row: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.cell7, .cell8, .cell9{
+  background-color: #F56600;
+	/* background-color: #522D80; */
+	color: #fff;
+	border-radius: 2px;
+	grid-row: 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
+/******************************************
+/* FONT STYLES
+/*******************************************/
+.cell1, .cell2, .cell3, .cell4, .cell5, .cell6, .cell7, .cell8, .cell9{
+	font-family: "Orbitron";
+	font-size: 750%;
+}
 
 /******************************************
 /* ADDITIONAL STYLES
