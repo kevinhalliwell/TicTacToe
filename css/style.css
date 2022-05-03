@@ -19,26 +19,27 @@ body{
 /* LAYOUT
 /*******************************************/
 .outerContainer{
-	  display: grid;
-	  place-items: center;
-	  min-height: 100vh;
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
 }
 .innerContainer{
     display: grid;
     grid-gap: 2px;
     grid-template-columns: repeat(3, 200px);
-	  grid-template-rows: repeat(3, 200px);
+	grid-template-rows: repeat(5, 200px);
 }
-.cell1, .cell2, .cell3{
-	background-color: #F56600;
+.title{
+	background-color: #000000;
 	color: #fff;
 	border-radius: 2px;
 	grid-row: 1;
+	grid-column: span 3;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
-.cell4, .cell5, .cell6{
+.cell1, .cell2, .cell3{
 	background-color: #F56600;
 	color: #fff;
 	border-radius: 2px;
@@ -47,12 +48,30 @@ body{
 	align-items: center;
 	justify-content: center;
 }
-.cell7, .cell8, .cell9{
-  background-color: #F56600;
-	/* background-color: #522D80; */
+.cell4, .cell5, .cell6{
+	background-color: #F56600;
 	color: #fff;
 	border-radius: 2px;
 	grid-row: 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.cell7, .cell8, .cell9{
+  	background-color: #F56600;
+	color: #fff;
+	border-radius: 2px;
+	grid-row: 4;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.footer{
+	background-color: #000000;
+	color: #fff;
+	border-radius: 2px;
+	grid-row: 5;
+	grid-column: span 3;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -64,6 +83,16 @@ body{
 .cell1, .cell2, .cell3, .cell4, .cell5, .cell6, .cell7, .cell8, .cell9{
 	font-family: "Orbitron";
 	font-size: 750%;
+}
+.title{
+	font-family: "Orbitron";
+	font-size: 5em;
+	color: #522D80;
+}
+.footer{
+	font-family: "Orbitron";
+	font-size: 3em;
+	color: #522D80;
 }
 
 /******************************************
