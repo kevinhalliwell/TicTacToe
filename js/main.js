@@ -10,9 +10,7 @@ class TicTacToe{
 
         // create game board, empty = 0, X = 1, O = 2
         this.gameBoard = [
-            [0,0,0],
-            [0,0,0],
-            [0,0,0],
+            [0,0,0,0,0,0,0,0,0]
         ]
     }
 }
