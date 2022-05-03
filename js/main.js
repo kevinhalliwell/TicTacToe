@@ -3,6 +3,7 @@ class TicTacToe{
     constructor(player1, player2){
         this.player1 = player1
         this.player2 = player2
+        this.gameFinished = false
 
         // create game board, empty = 0, X = 1, O = 2
         this.gameBoard = [
@@ -10,11 +11,7 @@ class TicTacToe{
             [0,0,0],
             [0,0,0],
         ]
-
-        // variable to check gameover
-        this.gameOver = false
     }
-
 }
 
 // function to determine witch player will start the game
