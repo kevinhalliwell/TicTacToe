@@ -17,6 +17,23 @@ class TicTacToe{
 
 }
 
+// function to determine witch player will start the game
+function gameStart(){
+    let r = ""
+    let p1 = false
+    let p2 = false
+    r = Math.random() >= 0.5 ? "heads" : "tails"
+    if (r === "heads"){
+        p1 = true;
+        return p1
+    } else {
+        p2 = true;
+        return p2
+    }
+}
+
+gameStart()
+
 // start game
 
 // check score
