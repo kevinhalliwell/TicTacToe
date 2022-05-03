@@ -1,8 +1,8 @@
 // create tic tac toe object
 class TicTacToe{
-    constructor(player1, player2){
-        this.player1 = player1
-        this.player2 = player2
+    constructor(){
+        this.player1 = false
+        this.player2 = false
         this.gameFinished = false
         this.pl1 = 1
         this.pl2 = 2
@@ -21,15 +21,15 @@ class TicTacToe{
 // function to determine witch player will start the game
 function gameStart(){
     let r = ""
-    let p1 = false
-    let p2 = false
     r = Math.random() >= 0.5 ? "heads" : "tails"
     if (r === "heads"){
-        p1 = true;
-        return p1
+        this.player1 = true
+        this.player2 = false
+        return this.player1
     } else {
-        p2 = true;
-        return p2
+        this.player2 = true
+        this.player1 = false
+        return this.player2
     }
 }
 
@@ -42,7 +42,6 @@ function move(m){
     }
 
 }
-gameStart()
 
 // player move
 document.querySelectorAll("#box").forEach(element => element.addEventListener('click', (m) => game.move(m)))

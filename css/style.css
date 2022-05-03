@@ -39,7 +39,7 @@ body{
 	align-items: center;
 	justify-content: center;
 }
-.cell1, .cell2, .cell3{
+.box1, .box2, .box3{
 	background-color: #F56600;
 	color: #fff;
 	border-radius: 2px;
@@ -48,7 +48,7 @@ body{
 	align-items: center;
 	justify-content: center;
 }
-.cell4, .cell5, .cell6{
+.box4, .box5, .box6{
 	background-color: #F56600;
 	color: #fff;
 	border-radius: 2px;
@@ -57,7 +57,7 @@ body{
 	align-items: center;
 	justify-content: center;
 }
-.cell7, .cell8, .cell9{
+.box7, .box8, .box9{
   	background-color: #F56600;
 	color: #fff;
 	border-radius: 2px;
@@ -80,7 +80,7 @@ body{
 /******************************************
 /* FONT STYLES
 /*******************************************/
-.cell1, .cell2, .cell3, .cell4, .cell5, .cell6, .cell7, .cell8, .cell9{
+.box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9{
 	font-family: "Orbitron";
 	font-size: 750%;
 }
