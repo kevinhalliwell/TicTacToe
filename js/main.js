@@ -9,6 +9,8 @@ class TicTacToe{
         this.totalMoves = 9
 
         // create game board, empty = 0, X = 1, O = 2
+        // maybe create a second array for the box locations?
+        // or maybe load this array with box locations?
         this.gameBoard = [0,0,0,0,0,0,0,0,0]
     }
 }
@@ -34,7 +36,8 @@ function move(m){
     // check first to see if the game is over
     if (!this.gameFinished) {
         this.totalMoves--
-        
+    } else if (this.totalMoves === 8) {
+        gameFinished = true
     }
 
 }
@@ -42,13 +45,9 @@ function move(m){
 // player move
 document.querySelectorAll("#box").forEach(element => element.addEventListener('click', (m) => game.move(m)))
 
-// check score
+// check score, player turn, win or lose, update status
 
-// check player turn
-
-// check win or lose
-
-// check local storage for record
+// check local storage for record on game start or game load
 
 // enter names of players? could store in local storage
 
