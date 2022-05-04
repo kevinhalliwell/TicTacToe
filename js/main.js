@@ -1,11 +1,11 @@
 // create tic tac toe object
 class TicTacToe{
-    constructor(){
-        this.player1 = false
-        this.player2 = false
+    constructor(player1, player2){
+        this.player1 = player1
+        this.player2 = player2
         this.gameFinished = false
-        this.pl1 = 1
-        this.pl2 = 2
+        this.playerOne = 1 // used to fill the array with the player number
+        this.playerTwo = 2 // used to fill the array with the player number
         this.totalMoves = 9
 
         // create game board, empty = 0, X = 1, O = 2
@@ -31,6 +31,7 @@ function gameStart(){
     }
 }
 
+
 // function to place X or O depending on player
 function move(m){
     // check first to see if the game is over
@@ -42,8 +43,19 @@ function move(m){
 
 }
 
+function cellClickHandler(e){
+    e.target.classList.add('X')
+    console.log('box1')
+    let x = ""
+    document.getElementById
+}
+
+document.querySelectorAll(".box1").forEach(cell => {
+    cell.addEventListener("click", cellClickHandler)
+});
+
 // player move
-document.querySelectorAll("#box").forEach(element => element.addEventListener('click', (m) => game.move(m)))
+// document.querySelectorAll("#box").forEach(element => element.addEventListener('click', (m) => game.move(m)))
 
 // check score, player turn, win or lose, update status
 
