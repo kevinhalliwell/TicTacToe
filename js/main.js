@@ -37,25 +37,21 @@ function move(m){
     // check first to see if the game is over
     if (!this.gameFinished) {
         this.totalMoves--
-    } else if (this.totalMoves === 8) {
+    } else if (this.totalMoves === 0) {
         gameFinished = true
     }
 
 }
 
-function cellClickHandler(e){
-    e.target.classList.add('X')
-    console.log('box1')
-    let x = ""
-    document.getElementById
+const boxes = document.querySelectorAll('#box')
+console.log(boxes)
+const box = (e) => {
+    const id = e.target.id
+    console.log(e)
 }
-
-document.querySelectorAll(".box1").forEach(cell => {
-    cell.addEventListener("click", cellClickHandler)
-});
+box()
 
 // player move
-// document.querySelectorAll("#box").forEach(element => element.addEventListener('click', (m) => game.move(m)))
 
 // check score, player turn, win or lose, update status
 
