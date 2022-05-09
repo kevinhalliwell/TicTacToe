@@ -4,23 +4,33 @@ class TicTacToe{
         this.player1 = player1
         this.player2 = player2
         this.gameFinished = false
-        this.playerOne = 1 // used to fill the array with the player number
-        this.playerTwo = 2 // used to fill the array with the player number
-        this.totalMoves = 9
-
-        // create game board, empty = 0, X = 1, O = 2
-        // maybe create a second array for the box locations?
-        // or maybe load this array with box locations?
-        this.gameBoard = [0,0,0,0,0,0,0,0,0]
+        this.playerOne = []
+        this.playerTwo = []
+        this.totalMoves = 0
+        checkWin: [
+            // Rows
+            ['0', '1', '2'],
+            ['3', '4', '5'],
+            ['6', '7', '8'],
+    
+            // Columns
+            ['0', '3', '6'],
+            ['1', '4', '7'],
+            ['2', '5', '8'],
+    
+            // Diagonal
+            ['0', '4', '8'],
+            ['2', '4', '6']
+        ]
     }
 }
 
 // start game
 // function to determine witch player will start the game
-function gameStart(){
-    let r = ""
-    r = Math.random() >= 0.5 ? "heads" : "tails"
-    if (r === "heads"){
+function gameStartTurn(){
+    let r = ''
+    r = Math.random() >= 0.5 ? 'heads' : 'tails'
+    if (r === 'heads'){
         this.player1 = true
         this.player2 = false
         return this.player1
@@ -31,25 +41,82 @@ function gameStart(){
     }
 }
 
-
-// function to place X or O depending on player
-function move(m){
-    // check first to see if the game is over
-    if (!this.gameFinished) {
-        this.totalMoves--
-    } else if (this.totalMoves === 0) {
-        gameFinished = true
+// function to return the turn
+function playerTurn(player1, player2) {
+    if (this.player1 === true) {
+        return this.player1
+    } else if (this.player2 === true){
+        return this.player2
+    } else {
+        console.log('error in the player function both players are false')
     }
-
 }
 
-const boxes = document.querySelectorAll('#box')
-console.log(boxes)
-const box = (e) => {
-    const id = e.target.id
-    console.log(e)
+function move(){
+    gameStartTurn()
+    console.log(this.player1)
+    console.log(this.player2)
+    document.addEventListener('click', event => {
+        let target = event.target
+        let cell = target.classList.contains('box')
+        let selected = target.classList.contains('selected')
+        console.log('1')
+        //console.log(this.totalMoves)
+    
+        if (cell && !selected) {
+            const playerSelection = target.dataset.value
+            console.log('2')
+
+            if (this.player1 === true && this.player2 === false) {
+                player1 = false
+                player2 = true
+                target.classList.add('x')
+                console.log('X')
+                console.log(this.playerOne)
+                console.log(playerSelection)
+                this.playerOne.push(playerSelection)
+            } else if (this.player2 === true && this.player1 === false) {
+                player2 = false
+                player1 = true
+                target.classList.add('o')
+                console.log('O')
+                console.log(this.playerTwo)
+                console.log(playerSelection)
+                this.playerTwo.push(playerSelection)
+            }
+    
+            target.classList.add('selected')
+            console.log('3')
+            
+            // If all cells are selected, then its a draw print to the footer area
+            if (!document.querySelectorAll('#box:not(.selected)').length) {
+                document.querySelector('.hidden').classList.add('visible')
+                document.querySelector('.footer').textContent = 'It\'s A Draw!'
+                console.log('Draw')
+            }
+            console.log('4')
+
+            TicTacToe.checkWin.forEach(checkWin => {
+                let playerOneWin = winningState.every(s => TicTacToe.playerOne.includes(s))
+                let playerTwoWin = winningState.every(s => TicTacToe.playerTwo.includes(s))
+    
+                if (playerOneWin || playerTwoWin) {
+                    document.querySelectorAll('#box').forEach(cell => cell.classList.add('selected'))
+                    // havent sort the css for this yet
+                    // document.querySelector('.hidden').classList.add('visible')
+                    if (playerOneWin){
+                        document.querySelector('.footer').textContent = 'Player 1 WINS!!!'
+                    } else {
+                        document.querySelector('.footer').textContent = 'Player 2 WINS!!!'
+                    }
+                }
+            })
+        }
+    })
 }
-box()
+// still testing. array push is not working
+move()
+
 
 // player move
 

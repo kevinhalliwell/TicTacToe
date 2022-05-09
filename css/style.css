@@ -39,7 +39,20 @@ body{
 	align-items: center;
 	justify-content: center;
 }
-.box1, .box2, .box3{
+/* .hidden{
+	display: none;
+	visibility: hidden;
+	background-color: #c9ab95;
+	color: #fff;
+	border-radius: 2px;
+	grid-row: 3;
+	grid-column: span 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+} */
+.box0, .box1, .box2{
 	background-color: #F56600;
 	color: #fff;
 	border-radius: 2px;
@@ -48,7 +61,7 @@ body{
 	align-items: center;
 	justify-content: center;
 }
-.box4, .box5, .box6{
+.box3, .box4, .box5{
 	background-color: #F56600;
 	color: #fff;
 	border-radius: 2px;
@@ -57,7 +70,7 @@ body{
 	align-items: center;
 	justify-content: center;
 }
-.box7, .box8, .box9{
+.box6, .box7, .box8{
   	background-color: #F56600;
 	color: #fff;
 	border-radius: 2px;
@@ -80,7 +93,7 @@ body{
 /******************************************
 /* FONT STYLES
 /*******************************************/
-.box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9{
+.box0, .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8{
 	font-family: "Orbitron";
 	font-size: 750%;
 }
@@ -98,3 +111,16 @@ body{
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+.x::after {
+    content: 'X';
+}
+
+.o::after {
+    content: 'O';
+}
+.selected {
+    cursor: not-allowed;
+}
+#box:not(.disabled):hover {
+    background: #F7A062;
+}
