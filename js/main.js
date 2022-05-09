@@ -84,16 +84,18 @@ class TicTacToe{
                     // nee to fix this here too******************************************************************************************
                     document.querySelector('.restart').classList.remove('hidden')
                     document.querySelector('.footer').textContent = 'It\'s A Draw!'
-                    console.log('Draw')
+                    document.querySelector('h1').innerText = 'It\'s A Draw!'
                 }
 
                 // check to see if a player has won
                 if (this.checkWin(this.playerOne) === true) {
                     document.querySelector('.footer').textContent = 'Player 1 WINS!!!'
                     document.querySelector('.restart').classList.remove('hidden')
+                    document.querySelector('h1').innerText = 'Player 1 WINS!!!'
                 } else if (this.checkWin(this.playerTwo) === true){
                     document.querySelector('.footer').textContent = 'Player 2 WINS!!!'
                     document.querySelector('.restart').classList.remove('hidden')
+                    document.querySelector('h1').innerText = 'Player 2 WINS!!!'
                 }
             }
         })
