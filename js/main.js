@@ -82,7 +82,7 @@ class TicTacToe{
                 // If all cells are selected, then its a draw, print to the footer area
                 if (!document.querySelectorAll('.box:not(.selected)').length) {
                     // nee to fix this here too******************************************************************************************
-                    //document.querySelector('.hidden').classList.add('visible')
+                    document.querySelector('.restart').classList.remove('hidden')
                     document.querySelector('.footer').textContent = 'It\'s A Draw!'
                     console.log('Draw')
                 }
@@ -90,8 +90,10 @@ class TicTacToe{
                 // check to see if a player has won
                 if (this.checkWin(this.playerOne) === true) {
                     document.querySelector('.footer').textContent = 'Player 1 WINS!!!'
+                    document.querySelector('.restart').classList.remove('hidden')
                 } else if (this.checkWin(this.playerTwo) === true){
                     document.querySelector('.footer').textContent = 'Player 2 WINS!!!'
+                    document.querySelector('.restart').classList.remove('hidden')
                 }
             }
         })

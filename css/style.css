@@ -39,19 +39,6 @@ body{
 	align-items: center;
 	justify-content: center;
 }
-/* .hidden{
-	display: none;
-	visibility: hidden;
-	background-color: #c9ab95;
-	color: #fff;
-	border-radius: 2px;
-	grid-row: 3;
-	grid-column: span 3;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 10;
-} */
 .box0, .box1, .box2{
 	background-color: #F56600;
 	color: #fff;
@@ -123,4 +110,19 @@ body{
 }
 .box:not(.selected):hover {
     background: #F7A062;
+}
+.hidden{
+	display: none;
+}
+.restart{
+	width: 60%;
+    height: 40%;
+	top: 31%;
+    left: 20%;
+	position: relative;
+    background: #a46beb;
+    color: black;
+	position: fixed;
+    z-index: 10;
+	opacity: 0.7;
 }
