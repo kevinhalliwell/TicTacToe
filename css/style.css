@@ -121,6 +121,6 @@ body{
 .selected {
     cursor: not-allowed;
 }
-#box:not(.disabled):hover {
+.box:not(.selected):hover {
     background: #F7A062;
 }
