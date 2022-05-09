@@ -1,29 +1,13 @@
 // create tic tac toe object
 class TicTacToe{
-    constructor(player1, player2){
-        this.player1 = player1
-        this.player2 = player2
+    constructor(){
         this.gameFinished = false
         this.playerOne = []
         this.playerTwo = []
         this.playerOneTurn = false
         this.playerTwoTurn = false
-        // this.checkWin; [
-        //     // Rows
-        //     ['0', '1', '2'],
-        //     ['3', '4', '5'],
-        //     ['6', '7', '8'],
-        
-        //     // Columns
-        //     ['0', '3', '6'],
-        //     ['1', '4', '7'],
-        //     ['2', '5', '8'],
-        
-        //     // Diagonal
-        //     ['0', '4', '8'],
-        //     ['2', '4', '6']
-        // ]
     }
+
     // start game
     // function to determine witch player will start the game
     gameStartTurn(){
@@ -38,7 +22,7 @@ class TicTacToe{
         }
     }
 
-    // check the win
+    // helper function to check the win
     checkWin(player){
         let win = false
          let winningStates = [
@@ -65,7 +49,8 @@ class TicTacToe{
           }
     }
 
-    // main logic function. can be refactored and made smaller, more functions etc
+    // main logic function.
+    // check score, player turn, win or lose, update status
     move(){
         document.addEventListener('click', event => {
             let target = event.target
@@ -94,13 +79,15 @@ class TicTacToe{
                 // add selected to box class that was selected
                 target.classList.add('selected')
                     
-                // If all cells are selected, then its a draw print to the footer area
+                // If all cells are selected, then its a draw, print to the footer area
                 if (!document.querySelectorAll('.box:not(.selected)').length) {
                     // nee to fix this here too******************************************************************************************
                     //document.querySelector('.hidden').classList.add('visible')
                     document.querySelector('.footer').textContent = 'It\'s A Draw!'
                     console.log('Draw')
                 }
+
+                // check to see if a player has won
                 if (this.checkWin(this.playerOne) === true) {
                     document.querySelector('.footer').textContent = 'Player 1 WINS!!!'
                 } else if (this.checkWin(this.playerTwo) === true){
@@ -111,18 +98,7 @@ class TicTacToe{
     }
 }
 
-// still testing. array push is not working
-let game = new TicTacToe("J", "K")
+// create new tic tac toe object
+let game = new TicTacToe()
 game.gameStartTurn()
 game.move()
-
-
-// player move
-
-// check score, player turn, win or lose, update status
-
-// check local storage for record on game start or game load
-
-// enter names of players? could store in local storage
-
-// could make a leader board with names and scores etc.... local storage only
