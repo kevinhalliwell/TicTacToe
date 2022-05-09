@@ -8,7 +8,6 @@ class TicTacToe{
         this.playerTwo = []
         this.playerOneTurn = false
         this.playerTwoTurn = false
-        this.totalMoves = 0
         checkWin: [
             // Rows
             ['0', '1', '2'],
@@ -32,56 +31,45 @@ class TicTacToe{
         r = Math.random() >= 0.5 ? 'heads' : 'tails'
         if (r === 'heads'){
             this.playerOneTurn = true
-            return this.playerOneFalse
+            return this.playerOneTurn
         } else {
             this.playerTwoTurn = true
             return this.playerTwoTurn
         }
     }
 
+    // main logic function. can be refactored and made smaller, more functions etc
     move(){
-        console.log(game.playerOneTurn)
-        console.log(game.playerTwoTurn)
         document.addEventListener('click', event => {
             let target = event.target
             let cell = target.classList.contains('box')
             let selected = target.classList.contains('selected')
-            console.log('1')
-            //console.log(this.totalMoves)
             
             if (cell && !selected) {
                 const playerSelection = target.dataset.value
-                console.log('2')
                 
                 // FIX THESE VARIABLES HERE**********
-                if (this.player1 === true && this.player2 === false) {
-                    player1 = false
-                    player2 = true
+                if (this.playerOneTurn === true && this.playerTwoTurn === false) {
+                    this.playerOneTurn = false
+                    this.playerTwoTurn = true
                     target.classList.add('x')
-                    console.log('X')
-                    console.log(this.playerOne)
-                    console.log(playerSelection)
                     this.playerOne.push(playerSelection)
-                } else if (this.player2 === true && this.player1 === false) {
-                    player2 = false
-                    player1 = true
+                } else if (this.playerTwoTurn === true && this.playerOneTurn === false) {
+                    this.playerTwoTurn = false
+                    this.playerOneTurn = true
                     target.classList.add('o')
-                    console.log('O')
-                    console.log(this.playerTwo)
-                    console.log(playerSelection)
                     this.playerTwo.push(playerSelection)
                 }
             
                 target.classList.add('selected')
-                console.log('3')
                     
                 // If all cells are selected, then its a draw print to the footer area
-                if (!document.querySelectorAll('#box:not(.selected)').length) {
-                    document.querySelector('.hidden').classList.add('visible')
+                if (!document.querySelectorAll('.box:not(.selected)').length) {
+                    // nee to fix this here too******************************************************************************************
+                    //document.querySelector('.hidden').classList.add('visible')
                     document.querySelector('.footer').textContent = 'It\'s A Draw!'
                     console.log('Draw')
                 }
-                console.log('4')
         
                 TicTacToe.checkWin.forEach(checkWin => {
                     let playerOneWin = winningState.every(s => TicTacToe.playerOne.includes(s))
