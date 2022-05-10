@@ -1,7 +1,6 @@
 // create tic tac toe object
 class TicTacToe{
     constructor(){
-        this.gameFinished = false
         this.playerOne = []
         this.playerTwo = []
         this.playerOneTurn = false
@@ -25,7 +24,7 @@ class TicTacToe{
     // helper function to check the win
     checkWin(player){
         let win = false
-         let winningStates = [
+        let winningStates = [
             // winning conditions contained in the rows
             ['0', '1', '2'],
             ['3', '4', '5'],
@@ -41,12 +40,22 @@ class TicTacToe{
             ['2', '4', '6']
         ]
         let res = winningStates.filter(p => p.filter(s => {
-            return player.indexOf(s) > -1;
-          }).length == 3);
-          if (res.length > 0){
-              win = true
-              return win
-          }
+            return player.indexOf(s) > -1
+        }).length == 3);
+        if (res.length > 0){
+            win = true
+            return win
+        }
+    }
+
+    // allow the user to play again
+    playAgain() {
+        document.location.reload()
+    }
+
+    // close tab if use is finished
+    quit(){
+        window.close()
     }
 
     // main logic function.
@@ -106,3 +115,5 @@ class TicTacToe{
 let game = new TicTacToe()
 game.gameStartTurn()
 game.move()
+document.getElementById('play').addEventListener('click', game.playAgain)
+document.getElementById('quit').addEventListener('click', game.quit)
