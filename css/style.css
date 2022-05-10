@@ -97,7 +97,12 @@ body{
 h1{
 	font-family: "Orbitron";
 	font-size: 3em;
-	color: #120225;
+	color: #2e0a58;
+}
+.play, .quit{
+	font-family: "Orbitron";
+	font-size: 1em;
+	color: #2e0a58;
 }
 
 
@@ -130,10 +135,29 @@ h1{
     color: black;
 	position: fixed;
     z-index: 10;
-	opacity: 0.7;
+	opacity: 0.95;
 }
 h1{
 	opacity: 1;
 	text-align: center;
 	padding-top: 4%;
+	margin-bottom: 12%;
+}
+.play{
+	float: left;
+	opacity: 1;
+	text-align: center;
+	margin-left: 8%;
+	padding: 2% 0;
+	border: 2px solid #2e0a58;;
+	width: 40%;
+}
+.quit{
+	float: left;
+	opacity: 1;
+	text-align: center;
+	margin-left: 4%;
+	padding: 2% 0;
+	border: 2px solid #2e0a58;;
+	width: 40%;
 }
