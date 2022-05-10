@@ -15,7 +15,6 @@ class TicTacToe{
         if (r === 'heads'){
             this.playerOneTurn = true
             document.querySelector('.footer').textContent = 'Player 1\'s move!'
-
             return this.playerOneTurn
         } else {
             this.playerTwoTurn = true
@@ -95,7 +94,6 @@ class TicTacToe{
                     
                 // If all cells are selected, then its a draw, print to the footer area
                 if (!document.querySelectorAll('.box:not(.selected)').length) {
-                    // nee to fix this here too******************************************************************************************
                     document.querySelector('.restart').classList.remove('hidden')
                     document.querySelector('.footer').textContent = 'It\'s A Draw!'
                     document.querySelector('h1').innerText = 'It\'s A Draw!'
