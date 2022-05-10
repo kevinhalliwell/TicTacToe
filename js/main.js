@@ -14,9 +14,12 @@ class TicTacToe{
         r = Math.random() >= 0.5 ? 'heads' : 'tails'
         if (r === 'heads'){
             this.playerOneTurn = true
+            document.querySelector('.footer').textContent = 'Player 1\'s move!'
+
             return this.playerOneTurn
         } else {
             this.playerTwoTurn = true
+            document.querySelector('.footer').textContent = 'Player 2\'s move!'
             return this.playerTwoTurn
         }
     }
@@ -76,6 +79,7 @@ class TicTacToe{
                     target.classList.add('x')
                     // update player array for comparison to winning array
                     this.playerOne.push(playerSelection)
+                    document.querySelector('.footer').textContent = 'Player 2\'s move!'
                 } else if (this.playerTwoTurn === true && this.playerOneTurn === false) {
                     this.playerTwoTurn = false
                     this.playerOneTurn = true
@@ -83,6 +87,7 @@ class TicTacToe{
                     target.classList.add('o')
                     // update player array for comparison to winning array
                     this.playerTwo.push(playerSelection)
+                    document.querySelector('.footer').textContent = 'Player 1\'s move!'
                 }
                 
                 // add selected to box class that was selected
