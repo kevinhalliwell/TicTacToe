@@ -70,20 +70,25 @@ class TicTacToe{
 
             if (cell && !selected) {
                 const playerSelection = target.dataset.value
+
                 // check to see which player is up, enter the statement and change player
                 if (this.playerOneTurn === true && this.playerTwoTurn === false) {
                     this.playerOneTurn = false
                     this.playerTwoTurn = true
+
                     // update class to include x allows for X placement
                     target.classList.add('x')
+
                     // update player array for comparison to winning array
                     this.playerOne.push(playerSelection)
                     document.querySelector('.footer').textContent = 'Player 2\'s move!'
                 } else if (this.playerTwoTurn === true && this.playerOneTurn === false) {
                     this.playerTwoTurn = false
                     this.playerOneTurn = true
+
                     // update class to include o allows for O placement
                     target.classList.add('o')
+                    
                     // update player array for comparison to winning array
                     this.playerTwo.push(playerSelection)
                     document.querySelector('.footer').textContent = 'Player 1\'s move!'
